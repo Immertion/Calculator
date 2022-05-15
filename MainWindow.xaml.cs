@@ -51,7 +51,7 @@ namespace WpfApp3
         }
         private void sum_click(object sender, RoutedEventArgs e)
         {
-            Plus pluser = new Plus();
+            Plus plus = new Plus();
             sumarize(); 
     
             if (op != null)
@@ -65,12 +65,12 @@ namespace WpfApp3
                 buffer = "";
                 Text.Content = buffer;
             }
-            op = pluser;
+            op = plus;
         }
 
         private void division_click(object sender, RoutedEventArgs e)
         {
-            Division del = new Division();
+            Division division = new Division();
             sumarize();
 
             if (op != null)
@@ -84,7 +84,7 @@ namespace WpfApp3
                 buffer = "";
                 Text.Content = buffer;
             }
-            op = del;
+            op = division;
         }
 
         private void minus_click(object sender, RoutedEventArgs e)
@@ -104,6 +104,24 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = minus;
+        }
+        private void myltiply_click(object sender, RoutedEventArgs e)
+        {
+            Myltiply myltiply = new Myltiply();
+            sumarize();
+
+            if (op != null)
+            {
+                operand1 = op.Calculate(operand1, operand2);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                buffer = "";
+                Text.Content = buffer;
+            }
+            op = myltiply;
         }
         private void result_click(object sender, RoutedEventArgs e)
         {

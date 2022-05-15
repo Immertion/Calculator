@@ -33,6 +33,13 @@ namespace Calculator
             return new Operand(first.value - second.value);
         }
     }
+    public class Myltiply : Operator
+    {
+        public override Operand Calculate(Operand first, Operand second)
+        {
+            return new Operand(first.value * second.value);
+        }
+    }
 
     public class Operand
     {
