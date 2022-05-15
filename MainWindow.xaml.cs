@@ -56,7 +56,7 @@ namespace WpfApp3
     
             if (op != null)
             {
-                operand1 = op.Calculate(operand2, operand1);
+                operand1 = op.Calculate(operand1, operand2);
                 buffer = operand1.value.ToString();
                 Text.Content = buffer;
             }
@@ -75,7 +75,7 @@ namespace WpfApp3
 
             if (op != null)
             {
-                operand1 = op.Calculate(operand2, operand1);
+                operand1 = op.Calculate(operand1, operand2);
                 buffer = operand1.value.ToString();
                 Text.Content = buffer;
             }
@@ -85,6 +85,25 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = del;
+        }
+
+        private void minus_click(object sender, RoutedEventArgs e)
+        {
+            Minus minus = new Minus();
+            sumarize();
+
+            if (op != null)
+            {
+                operand1 = op.Calculate(operand1, operand2);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                buffer = "";
+                Text.Content = buffer;
+            }
+            op = minus;
         }
         private void result_click(object sender, RoutedEventArgs e)
         {
