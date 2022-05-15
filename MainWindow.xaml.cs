@@ -68,10 +68,29 @@ namespace WpfApp3
             op = pluser;
         }
 
+        private void division_click(object sender, RoutedEventArgs e)
+        {
+            Division del = new Division();
+            sumarize();
 
+            if (op != null)
+            {
+                operand1 = op.Calculate(operand2, operand1);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                buffer = "";
+                Text.Content = buffer;
+            }
+            op = del;
+        }
         private void result_click(object sender, RoutedEventArgs e)
         {
 
         }
+
+
     }
 }
