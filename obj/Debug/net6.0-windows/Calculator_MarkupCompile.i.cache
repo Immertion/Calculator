@@ -1,20 +1,20 @@
-﻿WpfApp3
+﻿Calculator
 1.0.0.0
 
 winexe
 C#
 .cs
 C:\Users\ezepi\source\repos\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\
-WpfApp3
+Calculator
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ezepi\source\repos\WpfApp3\WpfApp3\App.xaml
 11407045341
 
-615551960
+6-491497902
 1941645785384
 MainWindow.xaml;
 
-True
+False
 

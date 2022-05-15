@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ezepi\\source\\repos\\WpfApp3\\WpfApp3\\WpfApp3.csproj",
-      "projectName": "WpfApp3",
-      "projectPath": "C:\\Users\\ezepi\\source\\repos\\WpfApp3\\WpfApp3\\WpfApp3.csproj",
+      "projectUniqueName": "C:\\Users\\ezepi\\source\\repos\\WpfApp3\\WpfApp3\\Calculator.csproj",
+      "projectName": "Calculator",
+      "projectPath": "C:\\Users\\ezepi\\source\\repos\\WpfApp3\\WpfApp3\\Calculator.csproj",
       "packagesPath": "C:\\Users\\ezepi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ezepi\\source\\repos\\WpfApp3\\WpfApp3\\obj\\",
       "projectStyle": "PackageReference",

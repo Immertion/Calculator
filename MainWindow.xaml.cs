@@ -26,7 +26,8 @@ namespace WpfApp3
         Operand operand2 = null;
         Operator op = null;
         string buffer = "0";
- 
+        string buf_up = "";
+
 
         public MainWindow()
         {
@@ -57,8 +58,8 @@ namespace WpfApp3
         private void sum_click(object sender, RoutedEventArgs e)
         {
             Plus plus = new Plus();
-            sumarize(); 
-    
+            sumarize();
+            buf_up += buffer;
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
@@ -72,13 +73,15 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = plus;
+            buf_up += '+';
+            behind_text.Content = buf_up;
         }
 
         private void division_click(object sender, RoutedEventArgs e)
         {
             Division division = new Division();
             sumarize();
-
+            buf_up += buffer;
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
@@ -92,13 +95,16 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = division;
+            buf_up += '/';
+            behind_text.Content = buf_up;
+
         }
 
         private void minus_click(object sender, RoutedEventArgs e)
         {
             Minus minus = new Minus();
             sumarize();
-
+            buf_up += buffer;
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
@@ -112,12 +118,16 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = minus;
+            buf_up += '-';
+            behind_text.Content = buf_up;
+
+
         }
         private void myltiply_click(object sender, RoutedEventArgs e)
         {
             Myltiply myltiply = new Myltiply();
             sumarize();
-
+            buf_up += buffer;
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
@@ -131,6 +141,10 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
             op = myltiply;
+            buf_up += '*';
+            behind_text.Content = buf_up;
+
+
         }
         private void result_click(object sender, RoutedEventArgs e)
         {
@@ -138,9 +152,23 @@ namespace WpfApp3
             operand1 = op.Calculate(operand1, operand2);
             buffer = operand1.value.ToString();
             op = null;
+            buf_up = "";
+            behind_text.Content = buf_up;
             Text.Content = buffer;
         }
 
-
+        private void delete_last_click(object sender, RoutedEventArgs e)
+        {
+            if (buffer.Length > 1)
+            {
+                buffer = buffer.Remove(buffer.Length - 1);
+                Text.Content = buffer;
+            }
+            else
+            {
+                buffer = "0";
+                Text.Content = buffer;
+            }
+        }
     }
 }
