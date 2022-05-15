@@ -25,7 +25,8 @@ namespace WpfApp3
         Operand operand1 = null;
         Operand operand2 = null;
         Operator op = null;
-        string buffer = "";
+        string buffer = "0";
+ 
 
         public MainWindow()
         {
@@ -33,6 +34,10 @@ namespace WpfApp3
         }
         private void Add_digit(object sender, RoutedEventArgs e)
         {
+            if (buffer == "0")
+            {
+                buffer = "";
+            }
             var button = sender as Button;
             var atr = button.Tag;
             buffer += atr;
@@ -57,12 +62,13 @@ namespace WpfApp3
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
+                operand2.value = 0;
+                buffer = "0";
+                Text.Content = operand1.value.ToString();
             }
             else
             {
-                buffer = "";
+                buffer = "0";
                 Text.Content = buffer;
             }
             op = plus;
@@ -76,12 +82,13 @@ namespace WpfApp3
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
+                operand2.value = 0;
+                buffer = "0";
+                Text.Content = operand1.value.ToString(); 
             }
             else
             {
-                buffer = "";
+                buffer = "0";
                 Text.Content = buffer;
             }
             op = division;
@@ -95,12 +102,13 @@ namespace WpfApp3
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
+                operand2.value = 0;
+                buffer = "0";
+                Text.Content = operand1.value.ToString(); 
             }
             else
             {
-                buffer = "";
+                buffer = "0";
                 Text.Content = buffer;
             }
             op = minus;
@@ -113,19 +121,24 @@ namespace WpfApp3
             if (op != null)
             {
                 operand1 = op.Calculate(operand1, operand2);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
+                operand2.value = 0;
+                buffer = "0";
+                Text.Content = operand1.value.ToString();
             }
             else
             {
-                buffer = "";
+                buffer = "0";
                 Text.Content = buffer;
             }
             op = myltiply;
         }
         private void result_click(object sender, RoutedEventArgs e)
         {
-
+            sumarize();
+            operand1 = op.Calculate(operand1, operand2);
+            buffer = operand1.value.ToString();
+            op = null;
+            Text.Content = buffer;
         }
 
 

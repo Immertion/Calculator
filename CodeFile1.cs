@@ -52,9 +52,6 @@ namespace Calculator
 
 
 
-    class Program
-    {
 
-    }
 
 }
