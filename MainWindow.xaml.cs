@@ -22,10 +22,12 @@ namespace Calc
     {
         Operand operand1 = null;
         Operand operand2 = null;
-        Operand memory_operand = new Operand(0);
         Base_operator op = null;
+        Operand memory_operand = new Operand(0);
+        
         string buffer = "0";
         string buf_up = "";
+        string history = "";
 
 
         public MainWindow()
@@ -358,10 +360,14 @@ namespace Calc
         private void result_click(object sender, RoutedEventArgs e)
         {
             sumarize();
+            history = buf_up + buffer + " = ";
             operand1 = op.Calculate(operand1, operand2);
             buffer = operand1.value.ToString();
+            history += buffer;
+            his.Items.Add(history);
             op = null;
             buf_up = "";
+            history = "";
             behind_text.Content = buf_up;
             Text.Content = buffer;
         }
