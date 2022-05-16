@@ -55,6 +55,19 @@ namespace WpfApp3
                 operand1 = new Operand(Convert.ToDouble(buffer));
             }
         }
+        public void print_operand()
+        {
+            if (op != null)
+            {
+                buffer = operand2.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
+        }
         private void sum_click(object sender, RoutedEventArgs e)
         {
             Plus plus = new Plus();
@@ -151,15 +164,56 @@ namespace WpfApp3
             if (op != null)
             {
                 operand2 = sign.Calculate(operand2);
-                buffer = operand2.value.ToString();
-                Text.Content = buffer;
             }
             else
             {
                 operand1 = sign.Calculate(operand1);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
             }
+            print_operand();
+        }
+        private void percent_click(object sender, RoutedEventArgs e)
+        {
+            Percent percent = new Percent();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = percent.Calculate(operand2);
+            }
+            else
+            {
+                operand1 = percent.Calculate(operand1);
+            }
+            print_operand();
+        }
+
+        private void reverse_click(object sender, RoutedEventArgs e)
+        {
+            Reverse reverse = new Reverse();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = reverse.Calculate(operand2);
+            }
+            else
+            {
+                operand1 = reverse.Calculate(operand1);
+            }
+            print_operand();
+        }
+
+        private void sqrt_click(object sender, RoutedEventArgs e)
+        {
+            Sqrt sqrt = new Sqrt();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = sqrt.Calculate(operand2);
+            }
+            else
+            {
+                operand1 = sqrt.Calculate(operand1);
+            }
+            print_operand();
         }
         private void delete_last_click(object sender, RoutedEventArgs e)
         {
@@ -199,40 +253,6 @@ namespace WpfApp3
             Text.Content = buffer;
         }
 
-        private void percent_click(object sender, RoutedEventArgs e)
-        {
-            Percent percent = new Percent();
-            sumarize();
-            if (op != null)
-            {
-                operand2 = percent.Calculate(operand2);
-                buffer = operand2.value.ToString();
-                Text.Content = buffer;
-            }
-            else
-            {
-                operand1 = percent.Calculate(operand1);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
-            }
-        }
 
-        private void reverse_click(object sender, RoutedEventArgs e)
-        {
-            Reverse reverse = new Reverse();
-            sumarize();
-            if (op != null)
-            {
-                operand2 = reverse.Calculate(operand2);
-                buffer = operand2.value.ToString();
-                Text.Content = buffer;
-            }
-            else
-            {
-                operand1 = reverse.Calculate(operand1);
-                buffer = operand1.value.ToString();
-                Text.Content = buffer;
-            }
-        }
     }
 }

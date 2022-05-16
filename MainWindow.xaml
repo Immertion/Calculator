@@ -39,6 +39,7 @@
         <Button x:Name="С_Copy" Content="С" HorizontalAlignment="Left" Margin="201,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="c_click" FontSize="24"/>
         <Button x:Name="percent" Content="%" HorizontalAlignment="Left" Margin="14,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="percent_click" FontSize="24"/>
         <Button x:Name="reverse" Content="1/x" HorizontalAlignment="Left" Margin="14,266,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="reverse_click" FontSize="24"/>
+        <Button x:Name="sqrt" Content="√" HorizontalAlignment="Left" Margin="108,266,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="sqrt_click" FontSize="24"/>
 
     </Grid>
 </Window>
