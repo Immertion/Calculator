@@ -72,6 +72,13 @@ namespace Calculator
             return new Operand(Math.Sqrt(first.value));
         }
     }
+    public class Square : Additional_operator
+    {
+        public override Operand Calculate(Operand first)
+        {
+            return new Operand(first.value * first.value);
+        }
+    }
     public class Operand
     {
         public double value;

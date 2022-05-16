@@ -215,6 +215,20 @@ namespace WpfApp3
             }
             print_operand();
         }
+        private void square_click(object sender, RoutedEventArgs e)
+        {
+            Square square = new Square();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = square.Calculate(operand2);
+            }
+            else
+            {
+                operand1 = square.Calculate(operand1);
+            }
+            print_operand();
+        }
         private void delete_last_click(object sender, RoutedEventArgs e)
         {
             if (buffer.Length > 1)
