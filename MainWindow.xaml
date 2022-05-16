@@ -35,7 +35,8 @@
         <Button x:Name="division_Copy" Content="&lt;--" HorizontalAlignment="Left" Margin="294,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="delete_last_click" FontSize="24"/>
         <Button x:Name="comma" Content="," HorizontalAlignment="Left" Margin="201,472,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="Add_digit" FontSize="24" Tag=","/>
         <Button x:Name="sign" Content="+/-" HorizontalAlignment="Left" Margin="12,472,0,0" VerticalAlignment="Top" Tag="" Height="43" Width="79" Click="change_sign" FontSize="24"/>
-        <Button x:Name="С" Content="С" HorizontalAlignment="Left" Margin="201,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="c_click" FontSize="24"/>
+        <Button x:Name="СE" Content="CE" HorizontalAlignment="Left" Margin="108,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="ce_click" FontSize="24"/>
+        <Button x:Name="С_Copy" Content="С" HorizontalAlignment="Left" Margin="201,214,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="c_click" FontSize="24"/>
 
     </Grid>
 </Window>

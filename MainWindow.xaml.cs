@@ -189,7 +189,13 @@ namespace WpfApp3
         {
             buffer = "0";
             buf_up = "";
+            op = null; 
             behind_text.Content = buf_up;
+            Text.Content = buffer;
+        }
+        private void ce_click(object sender, RoutedEventArgs e)
+        {
+            buffer = "0";
             Text.Content = buffer;
         }
     }
