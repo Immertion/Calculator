@@ -87,9 +87,4 @@ namespace Calculator
             this.value = value;
         }
     }
-
-
-
-
-
 }

@@ -15,11 +15,9 @@ using System.Windows.Shapes;
 using Calculator;
 
 
-namespace WpfApp3
+namespace Calc
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         Operand operand1 = null;
@@ -34,16 +32,92 @@ namespace WpfApp3
         {
             InitializeComponent();
         }
+
+        private void key_use(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.D0)
+            {
+                check_zero();
+                buffer += '0';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D1)
+            {
+                check_zero();
+                buffer += '1';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D2)
+            {
+                check_zero();
+                buffer += '2';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D3)
+            {
+                check_zero();
+                buffer += '3';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D4)
+            {
+                check_zero();
+                buffer += '4';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D5)
+            {
+                check_zero();
+                buffer += '5';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D6)
+            {
+                check_zero();
+                buffer += '6';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D7)
+            {
+                check_zero();
+                buffer += '7';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D8)
+            {
+                check_zero();
+                buffer += '8';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.D9)
+            {
+                check_zero();
+                buffer += '9';
+                Text.Content = buffer;
+            }
+            if (e.Key == Key.OemPlus) sum_click(sender, e);
+            if (e.Key == Key.OemMinus) minus_click(sender, e);
+            if (e.Key == Key.Back) delete_last_click(sender, e);
+            if (e.Key == Key.OemPipe) division_click(sender, e);
+            if (e.Key == Key.Multiply) myltiply_click(sender, e);
+            if (e.Key == Key.OemPeriod) Add_digit(sender, e);
+            if (e.Key == Key.Enter) result_click(sender, e);
+        }
         private void Add_digit(object sender, RoutedEventArgs e)
+        {
+            check_zero();
+            var button = sender as Button;
+            var atr = button.Tag;
+            buffer += atr;
+            Text.Content = buffer;
+        }
+        public void check_zero()
         {
             if (buffer == "0")
             {
                 buffer = "";
             }
-            var button = sender as Button;
-            var atr = button.Tag;
-            buffer += atr;
-            Text.Content = buffer;
         }
         public void sumarize()
         {
