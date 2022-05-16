@@ -24,7 +24,7 @@ namespace WpfApp3
     {
         Operand operand1 = null;
         Operand operand2 = null;
-        Operator op = null;
+        Base_operator op = null;
         string buffer = "0";
         string buf_up = "";
 
@@ -48,11 +48,11 @@ namespace WpfApp3
         {
             if (op != null)
             {
-                operand2 =  new Operand(Convert.ToInt16(buffer));
+                operand2 =  new Operand(Convert.ToDouble(buffer));
             }
             else
             {
-                operand1 = new Operand(Convert.ToInt16(buffer));
+                operand1 = new Operand(Convert.ToDouble(buffer));
             }
         }
         private void sum_click(object sender, RoutedEventArgs e)
@@ -143,20 +143,24 @@ namespace WpfApp3
             op = myltiply;
             buf_up += '*';
             behind_text.Content = buf_up;
-
-
         }
-        private void result_click(object sender, RoutedEventArgs e)
+        private void change_sign(object sender, RoutedEventArgs e)
         {
+            Sign sign = new Sign();
             sumarize();
-            operand1 = op.Calculate(operand1, operand2);
-            buffer = operand1.value.ToString();
-            op = null;
-            buf_up = "";
-            behind_text.Content = buf_up;
-            Text.Content = buffer;
+            if (op != null)
+            {
+                operand2 = sign.Calculate(operand2);
+                buffer = operand2.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                operand1 = sign.Calculate(operand1);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
         }
-
         private void delete_last_click(object sender, RoutedEventArgs e)
         {
             if (buffer.Length > 1)
@@ -169,6 +173,24 @@ namespace WpfApp3
                 buffer = "0";
                 Text.Content = buffer;
             }
+        }
+        private void result_click(object sender, RoutedEventArgs e)
+        {
+            sumarize();
+            operand1 = op.Calculate(operand1, operand2);
+            buffer = operand1.value.ToString();
+            op = null;
+            buf_up = "";
+            behind_text.Content = buf_up;
+            Text.Content = buffer;
+        }
+
+        private void c_click(object sender, RoutedEventArgs e)
+        {
+            buffer = "0";
+            buf_up = "";
+            behind_text.Content = buf_up;
+            Text.Content = buffer;
         }
     }
 }
