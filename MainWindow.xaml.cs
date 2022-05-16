@@ -48,7 +48,7 @@ namespace WpfApp3
         {
             if (op != null)
             {
-                operand2 =  new Operand(Convert.ToDouble(buffer));
+                operand2 = new Operand(Convert.ToDouble(buffer));
             }
             else
             {
@@ -87,7 +87,7 @@ namespace WpfApp3
                 operand1 = op.Calculate(operand1, operand2);
                 operand2.value = 0;
                 buffer = "0";
-                Text.Content = operand1.value.ToString(); 
+                Text.Content = operand1.value.ToString();
             }
             else
             {
@@ -110,7 +110,7 @@ namespace WpfApp3
                 operand1 = op.Calculate(operand1, operand2);
                 operand2.value = 0;
                 buffer = "0";
-                Text.Content = operand1.value.ToString(); 
+                Text.Content = operand1.value.ToString();
             }
             else
             {
@@ -189,7 +189,7 @@ namespace WpfApp3
         {
             buffer = "0";
             buf_up = "";
-            op = null; 
+            op = null;
             behind_text.Content = buf_up;
             Text.Content = buffer;
         }
@@ -197,6 +197,42 @@ namespace WpfApp3
         {
             buffer = "0";
             Text.Content = buffer;
+        }
+
+        private void percent_click(object sender, RoutedEventArgs e)
+        {
+            Percent percent = new Percent();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = percent.Calculate(operand2);
+                buffer = operand2.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                operand1 = percent.Calculate(operand1);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
+        }
+
+        private void reverse_click(object sender, RoutedEventArgs e)
+        {
+            Reverse reverse = new Reverse();
+            sumarize();
+            if (op != null)
+            {
+                operand2 = reverse.Calculate(operand2);
+                buffer = operand2.value.ToString();
+                Text.Content = buffer;
+            }
+            else
+            {
+                operand1 = reverse.Calculate(operand1);
+                buffer = operand1.value.ToString();
+                Text.Content = buffer;
+            }
         }
     }
 }

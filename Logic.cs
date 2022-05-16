@@ -51,7 +51,20 @@ namespace Calculator
             return new Operand(first.value * -1);
         }
     }
-
+    public class Percent : Additional_operator
+    {
+        public override Operand Calculate(Operand first)
+        {
+            return new Operand(first.value / 100);
+        }
+    }
+    public class Reverse : Additional_operator
+    {
+        public override Operand Calculate(Operand first)
+        {
+            return new Operand(1 / first.value);
+        }
+    }
     public class Operand
     {
         public double value;
