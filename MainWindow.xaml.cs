@@ -24,6 +24,7 @@ namespace WpfApp3
     {
         Operand operand1 = null;
         Operand operand2 = null;
+        Operand memory_operand = new Operand(0);
         Base_operator op = null;
         string buffer = "0";
         string buf_up = "";
@@ -242,17 +243,6 @@ namespace WpfApp3
                 Text.Content = buffer;
             }
         }
-        private void result_click(object sender, RoutedEventArgs e)
-        {
-            sumarize();
-            operand1 = op.Calculate(operand1, operand2);
-            buffer = operand1.value.ToString();
-            op = null;
-            buf_up = "";
-            behind_text.Content = buf_up;
-            Text.Content = buffer;
-        }
-
         private void c_click(object sender, RoutedEventArgs e)
         {
             buffer = "0";
@@ -264,6 +254,41 @@ namespace WpfApp3
         private void ce_click(object sender, RoutedEventArgs e)
         {
             buffer = "0";
+            Text.Content = buffer;
+        }
+        private void mc_click(object sender, RoutedEventArgs e)
+        {
+            memory_operand.value = 0;
+        }
+
+        private void mr_click(object sender, RoutedEventArgs e)
+        {
+            buffer = memory_operand.value.ToString();
+            Text.Content = buffer;
+        }
+
+        private void mplus_click(object sender, RoutedEventArgs e)
+        {
+            memory_operand.value += Convert.ToDouble(buffer);
+        }
+
+        private void mminus_click(object sender, RoutedEventArgs e)
+        {
+            memory_operand.value -= Convert.ToDouble(buffer);
+        }
+
+        private void ms_click(object sender, RoutedEventArgs e)
+        {
+            memory_operand.value = Convert.ToDouble(buffer);
+        }
+        private void result_click(object sender, RoutedEventArgs e)
+        {
+            sumarize();
+            operand1 = op.Calculate(operand1, operand2);
+            buffer = operand1.value.ToString();
+            op = null;
+            buf_up = "";
+            behind_text.Content = buf_up;
             Text.Content = buffer;
         }
 
