@@ -15,25 +15,25 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <Button x:Name="B1" Content="1" HorizontalAlignment="Left" Margin="13,419,0,0" VerticalAlignment="Top" Tag="1" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B1" Content="1" HorizontalAlignment="Left" Margin="13,419,0,0" VerticalAlignment="Top" Tag="1" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
         <Label x:Name="Text" Content="0" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" Width="353" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="24"/>
         <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Margin="293,419,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="sum_click" FontSize="24"/>
         <Button x:Name="result" Content="=" HorizontalAlignment="Left" Margin="293,470,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="result_click" FontSize="24" Background="#FF86ECFF"/>
-        <Button x:Name="B2" Content="2" HorizontalAlignment="Left" Margin="107,419,0,0" VerticalAlignment="Top" Tag="2" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B3" Content="3" HorizontalAlignment="Left" Margin="200,419,0,0" VerticalAlignment="Top" Tag="3" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B4" Content="4" HorizontalAlignment="Left" Margin="13,368,0,0" VerticalAlignment="Top" Tag="4" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B5" Content="5" HorizontalAlignment="Left" Margin="107,368,0,0" VerticalAlignment="Top" Tag="5" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B6" Content="6" HorizontalAlignment="Left" Margin="200,368,0,0" VerticalAlignment="Top" Tag="6" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B8" Content="8" HorizontalAlignment="Left" Margin="107,316,0,0" VerticalAlignment="Top" Tag="8" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B9" Content="9" HorizontalAlignment="Left" Margin="200,316,0,0" VerticalAlignment="Top" Tag="9" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B0" Content="0" HorizontalAlignment="Left" Margin="107,470,0,0" VerticalAlignment="Top" Tag="0" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
-        <Button x:Name="B7" Content="7" HorizontalAlignment="Left" Margin="13,316,0,0" VerticalAlignment="Top" Tag="7" Height="43" Width="79" Click="Add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B2" Content="2" HorizontalAlignment="Left" Margin="107,419,0,0" VerticalAlignment="Top" Tag="2" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B3" Content="3" HorizontalAlignment="Left" Margin="200,419,0,0" VerticalAlignment="Top" Tag="3" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B4" Content="4" HorizontalAlignment="Left" Margin="13,368,0,0" VerticalAlignment="Top" Tag="4" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B5" Content="5" HorizontalAlignment="Left" Margin="107,368,0,0" VerticalAlignment="Top" Tag="5" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B6" Content="6" HorizontalAlignment="Left" Margin="200,368,0,0" VerticalAlignment="Top" Tag="6" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B8" Content="8" HorizontalAlignment="Left" Margin="107,316,0,0" VerticalAlignment="Top" Tag="8" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B9" Content="9" HorizontalAlignment="Left" Margin="200,316,0,0" VerticalAlignment="Top" Tag="9" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B0" Content="0" HorizontalAlignment="Left" Margin="107,470,0,0" VerticalAlignment="Top" Tag="0" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
+        <Button x:Name="B7" Content="7" HorizontalAlignment="Left" Margin="13,316,0,0" VerticalAlignment="Top" Tag="7" Height="43" Width="79" Click="add_digit" FontSize="24" Background="White"/>
         <Button x:Name="division" Content="/" HorizontalAlignment="Left" Margin="293,264,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="division_click" FontSize="24"/>
         <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Margin="293,368,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="minus_click" FontSize="24"/>
         <Button x:Name="myltiply" Content="*" HorizontalAlignment="Left" Margin="293,316,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="myltiply_click" FontSize="24"/>
         <Label x:Name="behind_text" Content="" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Width="353" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
         <Button x:Name="division_Copy" Content="&lt;--" HorizontalAlignment="Left" Margin="293,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="delete_last_click" FontSize="24"/>
-        <Button x:Name="comma" Content="," HorizontalAlignment="Left" Margin="200,470,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="Add_digit" FontSize="24" Tag="," Background="White"/>
+        <Button x:Name="comma" Content="," HorizontalAlignment="Left" Margin="200,470,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="add_digit" FontSize="24" Tag="," Background="White"/>
         <Button x:Name="sign" Content="+/-" HorizontalAlignment="Left" Margin="13,470,0,0" VerticalAlignment="Top" Tag="" Height="43" Width="79" Click="change_sign" FontSize="24" Background="White"/>
         <Button x:Name="СE" Content="CE" HorizontalAlignment="Left" Margin="107,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="ce_click" FontSize="24"/>
         <Button x:Name="С_Copy" Content="С" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="c_click" FontSize="24"/>
