@@ -33,7 +33,7 @@
         <Button x:Name="myltiply" Content="*" HorizontalAlignment="Left" Margin="293,316,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="myltiply_click" FontSize="24"/>
         <Label x:Name="behind_text" Content="" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Width="353" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
         <Button x:Name="division_Copy" Content="&lt;--" HorizontalAlignment="Left" Margin="293,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="delete_last_click" FontSize="24"/>
-        <Button x:Name="comma" Content="," HorizontalAlignment="Left" Margin="200,470,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="add_digit" FontSize="24" Tag="," Background="White"/>
+        <Button x:Name="comma" Content="," HorizontalAlignment="Left" Margin="200,470,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="add_comma" FontSize="24" Tag="," Background="White"/>
         <Button x:Name="sign" Content="+/-" HorizontalAlignment="Left" Margin="13,470,0,0" VerticalAlignment="Top" Tag="" Height="43" Width="79" Click="change_sign" FontSize="24" Background="White"/>
         <Button x:Name="СE" Content="CE" HorizontalAlignment="Left" Margin="107,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="ce_click" FontSize="24"/>
         <Button x:Name="С_Copy" Content="С" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalAlignment="Top" Height="43" Width="79" Click="c_click" FontSize="24"/>

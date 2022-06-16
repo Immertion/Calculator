@@ -23,11 +23,16 @@ namespace Calc
         Operand operand1 = null;
         Operand operand2 = null;
         Base_operator op = null;
-   
+        Base_operator last_op = null;
+
         Operand memory_operand = new Operand(0);
-        
+
+        char opt = ' '; 
         string buffer = "0";
         string history = "";
+
+        int count_comma;
+        bool flag = false;
 
 
         public MainWindow()
@@ -107,12 +112,32 @@ namespace Calc
         }
         private void add_digit(object sender, RoutedEventArgs e)
         {
+            if (flag == true)
+            {
+                buffer = "0";
+                flag = false;
+            }
             remove_leading_zero();
             buffer += (sender as Button).Tag;
             Text.Content = buffer;
+
         }
+        private void add_comma(object sender, RoutedEventArgs e)
+        {
+            if (count_comma > 0)
+            {
+                return;
+            }
+            buffer += ',';
+            Text.Content = buffer;
+            count_comma++;
+
+        }
+
+
         public void remove_leading_zero()
         {
+
             if (buffer == "0")
             {
                 buffer = "";
@@ -143,6 +168,7 @@ namespace Calc
             {
                 buffer = "0";
             }
+            count_comma = 0;
         }
         public void print_operand()
         {
@@ -163,6 +189,8 @@ namespace Calc
             Calc();
             op = new Plus();
             behind_text.Content += "+";
+            opt = '+';
+
         }
 
         private void division_click(object sender, RoutedEventArgs e)
@@ -171,6 +199,7 @@ namespace Calc
             Calc();
             op = new Division();
             behind_text.Content += "/";
+            opt = '/';
         }
 
         private void minus_click(object sender, RoutedEventArgs e)
@@ -179,6 +208,7 @@ namespace Calc
             Calc();
             op = new Minus();
             behind_text.Content += "-";
+            opt = '-';
         }
         private void myltiply_click(object sender, RoutedEventArgs e)
         {
@@ -186,6 +216,7 @@ namespace Calc
             Calc();
             op = new Myltiply();
             behind_text.Content += "*";
+            opt = '*';
         }
         public void calc_single(Additional_operator single_op)
         {
@@ -289,17 +320,41 @@ namespace Calc
             memory_operand.value = Convert.ToDouble(buffer);
         }
         private void result_click(object sender, RoutedEventArgs e)
-        {
+        {   
             sumarize();
-            history = behind_text.Content + buffer + " = ";
-            operand1 = op.Calculate(operand1, operand2);
+            if (opt == '/' && operand2.value == 0)
+            {
+                buffer = "На ноль делить нельзя";
+                Text.Content = buffer;
+                behind_text.Content = "";
+                buffer = "";
+                operand1 = null;
+                operand2 = null;
+                op = null;
+                return;
+            }
+            if (op == null)
+            {
+                operand1 = last_op.Calculate(operand1, operand2);
+                history = buffer + opt + operand2.value.ToString() + " = "; 
+            }
+            else
+            {
+                history = behind_text.Content + buffer + " = ";
+                operand1 = op.Calculate(operand1, operand2);
+                last_op = op;
+                op = null;
+            }
+
             buffer = operand1.value.ToString();
             history += buffer;
             his.Items.Add(history);
-            op = null;
             history = "";
             behind_text.Content = "";
             Text.Content = buffer;
+            flag = true;
         }
+
+
     }
 }
